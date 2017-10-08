@@ -1,0 +1,24 @@
+Output
+ 
+enter the no of elements to be inserted
+8
+enter the element
+10
+enter the element
+20
+enter the element
+5
+enter the element
+6
+enter the element
+12
+enter the element
+30
+enter the element
+7
+enter the element
+17
+traversal of constructed tree
+ 5 6 7
+ 10
+ 12 17 20 30
