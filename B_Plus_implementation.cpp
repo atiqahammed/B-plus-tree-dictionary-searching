@@ -1,23 +1,23 @@
 /*
- * C++ Program to Implement B-Tree
+ * C++ Program to Implement B+ Tree
  */
 #include<stdio.h>
 #include<conio.h>
 #include<iostream>
 using namespace std;
-struct BTreeNode
+struct B+TreeNode
 {
     int *data;
-    BTreeNode **child_ptr;
+    B+TreeNode **child_ptr;
     bool leaf;
     int n;
 }*root = NULL, *np = NULL, *x = NULL;
-BTreeNode * init()
+B+TreeNode * init()
 {
     int i;
-    np = new BTreeNode;
+    np = new B+TreeNode;
     np->data = new int[5];
-    np->child_ptr = new BTreeNode *[6];
+    np->child_ptr = new B+TreeNode *[6];
     np->leaf = true;
     np->n = 0;
     for (i = 0; i < 6; i++)
@@ -26,7 +26,7 @@ BTreeNode * init()
     }
     return np;
 }
-void traverse(BTreeNode *p)
+void traverse(B+TreeNode *p)
 {
     cout<<endl;
     int i;
@@ -60,10 +60,10 @@ void sort(int *p, int n)
         }
     }
 }
-int split_child(BTreeNode *x, int i)
+int split_child(B+TreeNode *x, int i)
 {
     int j, mid;
-    BTreeNode *np1, *np3, *y;
+    B+TreeNode *np1, *np3, *y;
     np3 = init();
     np3->leaf = true;
     if (i == -1)
@@ -82,7 +82,7 @@ int split_child(BTreeNode *x, int i)
             x->data[j] = 0;
             x->n--;
         }
-        for (j = 0; j < 6; j++)
+        for(j = 0; j < 6; j++)
         {
             x->child_ptr[j] = NULL;
         }
@@ -188,9 +188,9 @@ int main()
     cin>>n;
     for(i = 0; i < n; i++)
     {
-          cout<<"enter the element\n";
-          cin>>t;
-          insert(t);
+        cout<<"enter the element\n";
+        cin>>t;
+        insert(t);
     }
     cout<<"traversal of constructed tree\n";
     traverse(root);
